@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<!--  DOCTYPE 선언 
+ 최상단에 위치, 문서의 타입 정의 
+ 어떤 버전으로 문서가 작성되었는지 브라우저에 알려주는 선언문 -->
+
+<html lang="en">
+  <!-- /html 요소, 최상위 레벨의 요소(루트 요소) 
+    / lang 속성 : 검색 엔진이나 브라우저가 참고할 수 있도록 
+    / 현재 문서가 어떤 언어로 작성되어 있는지 알려줌
+    / 문서 내용이 영어 - en, 한글 - ko -->
+
+  <!-- / 문서의 기본 설정, stylesheet를 연결하는 역할 
+    / body 해석 전 기본적으로 알아야 하는 정보로 필수적임 
+    / meta tag : 문서의 일반적인 정보, 문자 인코딩 명시  -->
+  <head>
+    <meta charset="UTF-8" />
+    <!-- / 문자 집합(정보 표현을 위해 글자나 기호의 집합을 정의한 것) 
+        / 및 인코딩(문자 집합을 컴퓨터에서 사용하기 위해 부호화하는 작업) 관련 요소 
+        / 언어 마다 다른 문자 집합과 인코딩 방식때문에 호환이 안됨 
+        / => 유니코드(전세계 문자 표현하기 위한 표준) 정의 및 해결(UTF-8) 
+        / 미지정시 브라우저 지원 여부에 따라 글자 깨질 가능성 ㅇ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- / 반응형 웹사이트를 만드는 경우 선언해야 하는 내용 
+         / 브라우저의 너비를 디바이스 크기에 맞추고 배율을 1(100%)로 설정 -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- / 인터넷 익스플로어 브라우저에서의 렌더링과 관련 
+         / 최신버전 엔진을 사용하는 브라우저로 렌더링하라는 의미 -->
+    <title>The Web framework for perfectionists with deadlines | Django</title>
+    <!-- / 문서의 제목을 나타냄, 페이지의 핵심 키워드 입력 
+        / 중요 텍스트를 입력해야 검색 엔진이 페이지를 잘 확인 -->
+    <link rel="stylesheet" href="./style.css" />
+    <!-- / style.css 파일과 연결
+        / rel 속성 : html 문서와 연결할 파일의 관계를 알려줌(연결할 파일이 stylesheet임)
+        / href : 연결할 파일의 위치를 알려줌 -->
+    <!-- 상대요소 : 지금 현재 내 위치에서의 파일 위치 -->
+    <!-- 절대 요소 : 특정 파일의 고유한 경로 ex) C:\Users\... -->
+    <link rel="stylesheet" href="./normalize.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="container">
+        <h1 class="logo">
+          <img
+            src="https://static.djangoproject.com/img/logo-django.42234b631760.svg"
+            alt="Django"
+          />
+        </h1>
+        <nav class="nav">
+          <ul class="list">
+            <li class="list-item"><a href="#">Overview</a></li>
+            <li class="list-item"><a href="#">Download</a></li>
+            <li class="list-item"><a href="#">Documentation</a></li>
+            <li class="list-item"><a href="#">News</a></li>
+            <li class="list-item"><a href="#">Community</a></li>
+            <li class="list-item"><a href="#">Code</a></li>
+            <li class="list-item"><a href="#">About</a></li>
+            <li class="list-item"><a href="#">♥ Donate</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="main">
+      <div class="hero-section">
+        <div class="container">
+          <p class="intro-desc">
+            Django makes it easier to build better Web apps more quickly and
+            with less code.
+          </p>
+          <a href="#" class="cta hero-cta">
+            Get started with Django
+          </a>
+        </div>
+      </div>
+      <div class="container-float">
+        <div class="main-content">
+          <h2 class="main-title">Stay in the loop</h2>
+          <p class="main-desc">
+            Subscribe to one of our mailing lists to stay up to date with
+            everything in the Django community:
+          </p>
+          <div class="mailing-layout">
+            <div class="mailing">
+              <h3 class="mailing-title">
+                <a href="#">
+                  Using Django
+                </a>
+              </h3>
+              <p class="mailing-desc">
+                Get help with Django and follow announcements.
+              </p>
+              <form action="#" class="mailing-form">
+                <label for="input-following"
+                  >send email for following news</label
+                >
+                <input
+                  type="email"
+                  placeholder="Enter email"
+                  id="input-following"
+                  name="input-following"
+                />
+                <button type="submit" class="mailing-form-btn">Submit</button>
+              </form>
+              <p class="mailing-desc">
+                You can also subscribe by sending an email to
+                <a href="mailto:django-users+subscribe@googlegroups.com"
+                  >django-users+subscribe@googlegroups.com</a
+                >
+                and following the instructions that will be sent to you.
+              </p>
+            </div>
+            <div class="mailing">
+              <h3 class="mailing-title">
+                <a href="#">Contributing to Django</a>
+              </h3>
+              <p class="mailing-desc">
+                Contribute to the development of Django itself.
+              </p>
+              <form action="#" class="mailing-form">
+                <label for="email-contribute"
+                  >send e-mail for contribution</label
+                >
+                <input
+                  type="email"
+                  placeholder="Enter email"
+                  id="email-contribute"
+                  name="email-contribute"
+                />
+                <button type="submit" class="mailing-form-btn">
+                  Submit
+                </button>
+              </form>
+              <p class="mailing-desc">
+                Before asking a question about how to contribute, read
+                <a
+                  href="https://docs.djangoproject.com/en/dev/internals/contributing/"
+                  >Contributing to Django</a
+                >. Many frequently asked questions are answered there.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="side-content">
+          <div class="container-side-cta">
+            <a href="#" class="cta side-cta"
+              >Download <em>latest release: 2.1.7</em></a
+            >
+            <a href="#" class="more">Django documentation</a>
+          </div>
+          <div class="latest-news infos">
+            <h2 class="infos-title">Latest news</h2>
+            <article class="news-article">
+              <h3 class="news-title">
+                <a href="#"
+                  >Django bugfix releases: 2.1.7, 2.0.12 and 1.11.20</a
+                >
+              </h3>
+              <p class="news-desc">
+                Today the Django project issued bugfix releases for the 2.1, 2.0
+                and 1.11 release series.
+              </p>
+              <p class="news-meta">
+                Posted by <span>Carlton Gibson</span> on
+                <time datetime="2019-02-11">2월 11, 2019</time>
+              </p>
+            </article>
+            <a href="#" class="more">More news</a>
+          </div>
+          <div class="get-involved infos">
+            <h2 class="infos-title">Get involved</h2>
+            <dl class="list-communities">
+              <dt class="community-title">
+                <a href="#">#django IRC channel</a>
+              </dt>
+              <dd class="community-desc">Chat with other Django users</dd>
+              <dt class="community-title"><a href="#">Ticket system</a></dt>
+              <dd class="community-desc">
+                Report bugs and make feature requests
+              </dd>
+            </dl>
+            <a href="#" class="more">Inside the django community</a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="content-info">
+      <div class="links">링크</div>
+      <div class="footer">푸터</div>
+    </footer>
+  </body>
+</html>
